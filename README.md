@@ -24,11 +24,8 @@ This Mason brick is designed to save developers time and effort, allowing them t
 
 ## Project Structure 📦
 
-```sh
-├── .dart_tool/
-├── .idea/
+```YOUR_APP_NAME
 ├── android/
-│   ├── google1_android/
 ├── assets/
 │   ├── loading.json
 │   └── logo.png
@@ -46,12 +43,6 @@ This Mason brick is designed to save developers time and effort, allowing them t
 │   ├── widget_test.dart
 ├── web/
 ├── windows/
-├── .flutter-plugins
-├── .flutter-plugins-dependencies
-├── .gitignore
-├── .metadata
 ├── analysis_options.yaml
-├── google1.iml
-├── pubspec.lock
 ├── pubspec.yaml
 └── README.md

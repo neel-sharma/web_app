@@ -35,7 +35,9 @@ This Mason brick is designed to save developers time and effort, allowing them t
 │   ├── core/
 │   │   ├── app_constants.dart
 │   ├── presentation.screens/
-│   │   └── web_view_screen.dart
+│   ├── presentation/
+│   │   ├── screens
+│   │   │   ├── web_view_screen.dart
 │   ├── main.dart
 ├── linux/
 ├── macos/

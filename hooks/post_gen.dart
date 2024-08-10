@@ -59,7 +59,6 @@ Future<void> _runCommand(String command, Directory workingDirectory) async {
 Future<String?> _pickImage() async {
   if (Platform.isWindows) {
     print('Running on Windows: attempting to open file picker...');
-    // PowerShell script to open file dialog and return the selected file path
     final result = await Process.run(
         'powershell',
         [
@@ -74,7 +73,6 @@ Future<String?> _pickImage() async {
         ]
     );
 
-    // Log the exit code and output
     print('Exit code: ${result.exitCode}');
     if (result.exitCode == 0) {
       print('File picker output: ${result.stdout.trim()}');
@@ -83,11 +81,24 @@ Future<String?> _pickImage() async {
       print('Error output: ${result.stderr}');
     }
   } else if (Platform.isMacOS || Platform.isLinux) {
-    print('Running on macOS/Linux: attempting to open file picker...');
-    // Use zenity for macOS/Linux to open file selection dialog
+    print('Running on macOS/Linux: checking for zenity...');
+
+    // Check if zenity is installed
+    final checkZenity = await Process.run('which', ['zenity']);
+    if (checkZenity.exitCode != 0) {
+      print('Zenity is not installed.');
+      print('Please install zenity using the following command:');
+      if (Platform.isMacOS) {
+        print('brew install zenity');
+      } else if (Platform.isLinux) {
+        print('sudo apt-get install zenity');
+      }
+      return null;
+    }
+
+    print('Zenity is installed: attempting to open file picker...');
     final result = await Process.run('zenity', ['--file-selection', '--file-filter=*.png']);
 
-    // Log the exit code and output
     print('Exit code: ${result.exitCode}');
     if (result.exitCode == 0) {
       print('File picker output: ${result.stdout.trim()}');
@@ -100,4 +111,5 @@ Future<String?> _pickImage() async {
   }
   return null;  // Unsupported platform or failure
 }
+
 

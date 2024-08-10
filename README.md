@@ -48,3 +48,29 @@ This Mason brick is designed to save developers time and effort, allowing them t
 ├── analysis_options.yaml
 ├── pubspec.yaml
 └── README.md
+
+## Notes for macOS and Linux Users 📝
+
+Before using this Mason brick on macOS or Linux, please ensure you have the following tools installed:
+
+1. **Zenity**: Required for file selection dialogs.
+   - **macOS**: You can install `zenity` using Homebrew:
+     ```bash
+     brew install zenity
+     ```
+   - **Linux**: You can install `zenity` using APT (for Ubuntu/Debian):
+     ```bash
+     sudo apt-get install zenity
+     ```
+
+2. **Subversion (svn)**: Required for Mason and version control purposes.
+   - **macOS**: You can install `svn` using Homebrew:
+     ```bash
+     brew install svn
+     ```
+   - **Linux**: You can install `svn` using APT (for Ubuntu/Debian):
+     ```bash
+     sudo apt-get install subversion
+     ```
+
+Make sure these dependencies are installed before running the Mason brick to avoid any issues during project setup.

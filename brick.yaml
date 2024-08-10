@@ -1,6 +1,8 @@
 name: web_app
 description: A new brick created with the Mason CLI to create a fully functional web app.
 
+repository: https://github.com/neel-sharma/web_app
+
 version: 0.0.1+1
 
 environment:

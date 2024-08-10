@@ -1,0 +1,28 @@
+name: web_app
+description: A new brick created with the Mason CLI.
+
+version: 0.1.0+1
+
+environment:
+  mason: ">=0.1.0-dev.57 <0.1.0"
+
+vars:
+  appName:
+    type: string
+    description: App Name
+    prompt: What should we name your app?
+  url:
+    type: string
+    description: Base URL
+    prompt: Please enter a URL
+  enableRemoteConfig:
+    type: boolean
+    description: Enable Remote Config
+    prompt: Do you want fetch this URL from Firebase Remote Config
+  setupLauncherIconAndSplash:
+    type: boolean
+    description: Setup Launcher Icon and Splash
+    prompt: Do you want to setup launcher icon and native splash?
+
+  
+

@@ -1,0 +1,63 @@
+name: {{appName}}
+description: "A Web Application"
+
+publish_to: 'none'
+
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.4.3 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  flutter_inappwebview: ^6.0.0
+  cupertino_icons: ^1.0.5
+  flutter_native_splash: ^2.2.10+1
+  lottie: ^1.4.3
+  {{#enableRemoteConfig}}
+  firebase_core: ^3.1.1
+  firebase_remote_config: ^5.0.2
+  {{/enableRemoteConfig}}
+
+
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  flutter_lints: ^3.0.0
+
+flutter:
+
+  uses-material-design: true
+
+  assets:
+    - assets/
+
+
+{{#setupLauncherIconAndSplash}}
+flutter_native_splash:
+  color: "#ffffff"
+  image: assets/logo.png
+  color_dark: "#0F172A"
+  image_dark: assets/logo.png
+
+  android_12:
+    image: assets/logo.png
+    icon_background_color: "#ffffff"
+    image_dark: assets/logo.png
+    icon_background_color_dark: "#0F172A"
+
+  web: false
+
+icons_launcher:
+  image_path: "assets/logo.png"
+  platforms:
+    android:
+      enable: true
+    ios:
+      enable: true
+{{/setupLauncherIconAndSplash}}
+
